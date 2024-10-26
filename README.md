@@ -1,5 +1,4 @@
-![WhatsApp Image 2024-10-05 at 9 31 03 AM](https://github.com/user-attachments/assets/d5b47a34-74cf-487f-b4c4-71811d7fca7c)# Counter_4bit_up-down
-
+# Counter_4bit_up-down
 **Aim:**
 
 &emsp;&emsp;To write a verilog code for 4bit up/down counter and verify the functionality using Test bench.<br>
@@ -187,4 +186,5 @@
 ![image](https://github.com/user-attachments/assets/fce258f9-dc5d-4ec3-a671-e2edd3834652)
 
 **Fig 11: Simulation Waveform Window**
+
 
