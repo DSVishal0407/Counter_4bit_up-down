@@ -41,7 +41,8 @@
       
 &emsp;&emsp;After this you can see the window like below <br>
 
-![Screenshot (149)](https://github.com/user-attachments/assets/9644960d-2eb0-4db9-b5b1-209f5c98f8b9)
+![WhatsApp Image 2024-11-24 at 19 24 53_f8bb0c64](https://github.com/user-attachments/assets/cc9808af-1101-4f10-9013-397e941843d8)
+
 
 **Fig 2: Invoke the Cadence Environment**
 
