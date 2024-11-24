@@ -1,4 +1,4 @@
-# Counter_4bit_up-down
+# 2. Counter_4bit_up-down
 **Aim:**
 
 &emsp;&emsp;To write a verilog code for 4bit up/down counter and verify the functionality using Test bench.<br>
@@ -41,7 +41,7 @@
       
 &emsp;&emsp;After this you can see the window like below <br>
 
-![image](https://github.com/user-attachments/assets/15177ef2-725b-4f4c-8ab5-e400084ed0a5)
+![Screenshot (149)](https://github.com/user-attachments/assets/9644960d-2eb0-4db9-b5b1-209f5c98f8b9)
 
 **Fig 2: Invoke the Cadence Environment**
 
@@ -54,16 +54,52 @@
 
 &emsp;&emsp;(Note : File name should be with HDL Extension)<br>
 
-**Verilog code for 4-Bit Up-Down Counter:**
+### Verilog code for 4-Bit Up-Down Counter:
 
+               
+                `timescale 1ns / 1 ns
+		module counter(clk,m,rst,count);
+                input clk,m,rst;
+                output reg [3:0] count;
+                always@(posedge clk or negedge rst)
+                begin
+                if (!rst)
+                count=0;
+                else if(m)
+                count=count+1;
+                else
+                count=count-1;
+                end
+                endmodule
 
-&emsp;&emsp;Use Save option or Ctrl+S to save the code or click on the save option from the top most right corner and close the text file.<br>
 
 **Creating Test bench:**
 
 &emsp;&emsp;Similarly, create your test bench using gedit <filename_tb>.v or <filename_tb>.vhdl to open a new blank document (4bitup_down_count_tb.v).<br>
 
-**Test-bench code for 4-Bit Up-Down Counter:**
+### Test-bench code for 4-Bit Up-Down Counter:
+
+                  `timescale 1ns / 1ns
+		   module counter_test;
+                   reg clk,rst,m;
+		   wire [3:0] count;
+                   initial
+		   begin
+                   clk=0;
+		   rst=0;#5;
+                   rst=1;
+		   end
+                   initial
+		   begin
+                   m=1;
+		   #160 m=0;
+                   end
+		   counter counter1 (clk,m,rst, count);
+                   always #5 clk=~clk;
+		   initial $monitor("Time=%t rst=%b clk=%b count=%b" , $time,rst,clk,count);
+                   initial
+		   #320 $finish;
+                   endmodule
 
 
 **To Launch Simulation tool**
@@ -73,7 +109,7 @@
 
 &emsp;&emsp;It will invoke the nclaunch window for functional simulation we can compile,elaborate and simulate it using Multiple step<br>
 
-![image](https://github.com/user-attachments/assets/cd9afdf0-290b-4320-961c-b966748268d9)
+![Screenshot (151)](https://github.com/user-attachments/assets/20b71b1e-267b-44bf-a38a-e042839d8bc1)
 
 **Fig 3: Setting Multi-step simulation**
 
@@ -186,5 +222,9 @@
 ![image](https://github.com/user-attachments/assets/fce258f9-dc5d-4ec3-a671-e2edd3834652)
 
 **Fig 11: Simulation Waveform Window**
+
+### Result:
+
+The functionality of 4bit up/down counter was successfully verified using a test bench and simulated with the nclaunch tool.
 
 
